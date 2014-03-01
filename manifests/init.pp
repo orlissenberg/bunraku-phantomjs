@@ -36,7 +36,7 @@
 # Copyright 2013 Your name here, unless otherwise noted.
 #
 
-class phantomjs  ($phantomjsversion = "1.9.1", $phantomcleanup = "true") {
+class phantomjs  ($phantomjsversion = "1.9.2", $phantomcleanup = "true") {
   case $::operatingsystem {
     'CentOS' : {
       # Package["openssl-devel"]
@@ -65,7 +65,7 @@ class phantomjs  ($phantomjsversion = "1.9.1", $phantomcleanup = "true") {
       file { "move-phantomjs":
         ensure => present,
         path => "/usr/local/bin/phantomjs",
-        source => "/tmp/phantomjs-1.9.1-linux-x86_64/bin/phantomjs",
+        source => "/tmp/phantomjs-${phantomjsversion}-linux-x86_64/bin/phantomjs",
         mode => "0755",
       }
 
